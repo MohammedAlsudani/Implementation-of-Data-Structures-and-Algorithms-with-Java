@@ -18,9 +18,47 @@ public class Tree {
         return null;
     }
 
+    public void delete(int value){
+        root = delete(root, value);
+    }
+
+    private TreeNode delete(TreeNode subtreeRoot, int value) {
+        if (subtreeRoot == null){
+            return subtreeRoot;
+        }
+
+        if (value < subtreeRoot.getData()){
+            subtreeRoot.setLeftChild(delete(subtreeRoot.getLeftChild(), value));
+        } else if (value > subtreeRoot.getData()){
+            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), value));
+        } else {
+            // case 0,1, node has 0 or 1 child(ren)
+            if (subtreeRoot.getLeftChild() == null) {
+                return subtreeRoot.getRightChild();
+            }else if (subtreeRoot.getRightChild() == null){
+               return subtreeRoot.getLeftChild();
+            }
+            subtreeRoot.setData(subtreeRoot.getRightChild().min());
+            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), subtreeRoot.getData()));
+        }
+        return subtreeRoot;
+    }
+
     public void traverseInOrder() {
         if (root != null) {
             root.traverseInOrder();
+        }
+    }
+
+    public void traversePreOrder() {
+        if (root != null) {
+            root.traversePreOrder();
+        }
+    }
+
+    public void traversePostOrder() {
+        if (root != null) {
+            root.traversePostOrder();
         }
     }
 

@@ -1,8 +1,6 @@
 package SortAlgo;
 
-import com.oracle.tools.packager.Log;
 
-import java.util.Arrays;
 
 public class BubleSort {
 
