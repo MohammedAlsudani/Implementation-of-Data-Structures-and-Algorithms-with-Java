@@ -12,7 +12,6 @@ public class searchMain {
         System.out.println(recursiveBinarySearch(inputArray,20));
         System.out.println(recursiveBinarySearch(inputArray,55));
         int[] arr = {1, 3, 5, 7, 9};
-        int index = recursiveBinarySearch(arr, 0, arr.length-1, 10);
         System.out.println(recursiveBinarySearch(arr,5));
     }
 
@@ -30,7 +29,7 @@ public class searchMain {
         int end = inputArray.length;
 
         while (start < end) {
-            int midPoint = (start+end) / 2 ;
+            int midPoint = (start + end) / 2 ;
             if (inputArray[midPoint] == value) {
                 return midPoint;
             } else if (inputArray[midPoint] < value) {
