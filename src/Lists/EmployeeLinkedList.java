@@ -41,5 +41,4 @@ public class EmployeeLinkedList {
             current = current.getNext();
         }
     }
-
 }

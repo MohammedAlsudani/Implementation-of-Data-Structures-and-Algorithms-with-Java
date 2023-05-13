@@ -29,9 +29,12 @@ public class TwoSum {
         Map<Character,Integer> map = new HashMap<>();
         Map<Character,Integer> result = new HashMap<>();
         for (char j : cha){
+            // check if the character is already in the map
             if (map.containsKey(j)){
+                // if it is, increment its count in the result map
                 result.put(j, result.getOrDefault(j,1)+1);
             }
+            // add the character to the map with a count of 0
             map.put(j,0);
         }
         return result;
@@ -43,11 +46,15 @@ public class TwoSum {
         // loop through the array and check for pairs if they are equal the sum or not
         for (int j : array) {
             int complement = sum - j;
+            // check if the complement of the current element has been seen before
             if (set.contains(complement)) {
+                // if it has, we have found a pair that sums to the target
                 return true;
             }
+            // add the current element to the set
             set.add(j);
         }
+        // no pair was found that sums to the target
         return false;
     }
 
@@ -57,9 +64,12 @@ public class TwoSum {
         Map<Integer, Integer> result = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
+            // check if the complement of the current element has been seen before
             if (map.containsKey(complement)) {
+                // if it has, we have found a pair that sums to the target
                 result.put(nums[complement], i);
             }
+            // add the current element to the map
             map.put(nums[i],i);
         }
         return result;
@@ -68,23 +78,31 @@ public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
-            int complimnt =  target - nums[i] ;
-            if (map.containsKey(complimnt)) {
-                return new int[]{map.get(complimnt), i};
+            int compliment =  target - nums[i] ;
+            // check if the complement of the current element has been seen before
+            if (map.containsKey(compliment)) {
+                // if it has, we have found a pair that sums to the target
+                return new int[]{map.get(compliment), i};
             }
+            // add the current element to the map
             map.put(nums[i],i);
         }
+        // no pair was found that sums to the target
         return new int[]{};
     }
+
 
     public int[] twoSumNestedLoop(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
+                // check if the sum of the current pair is equal to the target
                 if (nums[i] + nums[j] == target) {
+                    // if it is, return the indices of the pair
                     return new int[] { i, j };
                 }
             }
         }
+        // no pair was found that sums to the target
         throw new IllegalArgumentException("No two sum solution");
     }
 }
