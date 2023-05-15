@@ -1,4 +1,4 @@
-package Lists;
+package Lists.LinkList;
 
 import Lists.model.Employee;
 

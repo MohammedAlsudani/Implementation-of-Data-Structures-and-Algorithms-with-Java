@@ -12,7 +12,7 @@ public class BubleSort {
         for (int lastUnSortedIndex = array.length -1; lastUnSortedIndex > 0 ;lastUnSortedIndex--){
             for (int i = 0; i < lastUnSortedIndex; i++){
                 if (array[i]> array[i+1]){
-                    swape(array,i,i+1);
+                    swipe(array,i,i+1);
                 }
             }
         }
@@ -23,7 +23,7 @@ public class BubleSort {
 
     }
 
-    public static void swape(int[] array, int i , int j) {
+    public static void swipe(int[] array, int i , int j) {
         if (i==j){
             return;
         }

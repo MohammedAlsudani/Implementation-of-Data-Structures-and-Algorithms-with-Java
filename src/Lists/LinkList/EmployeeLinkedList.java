@@ -1,5 +1,6 @@
-package Lists;
+package Lists.LinkList;
 
+import Lists.model.EmployeeNode;
 import Lists.model.Employee;
 
 public class EmployeeLinkedList {

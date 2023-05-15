@@ -1,6 +1,4 @@
-package Lists;
-
-import Lists.model.Employee;
+package Lists.model;
 
 public class EmployeeNode {
 

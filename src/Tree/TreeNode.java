@@ -1,7 +1,5 @@
 package Tree;
 
-import javafx.scene.chart.ValueAxis;
-
 public class TreeNode {
 
     private int data;

@@ -1,8 +1,5 @@
 package Tree;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class BinarySearchTrees {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Lists;
+package Lists.LinkList;
 
 import java.util.ArrayList;
 import java.util.Objects;

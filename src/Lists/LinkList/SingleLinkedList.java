@@ -1,4 +1,4 @@
-package Lists;
+package Lists.LinkList;
 
 
 import java.util.ArrayList;
@@ -99,21 +99,38 @@ class SingleLinkedList {
         return length  < 1;
     }
 
+    /**
+     * Reverses the order of elements in the linked list and returns the reversed list as an ArrayList.
+     *
+     * @return ArrayList<Integer> representing the reversed list.
+     */
     public ArrayList<Integer> reverse() {
+        // If the list is empty, return a new ArrayList with the value of the head node.
         if (length == 0){
             return new ArrayList<>(this.head.value);
         }
+        // Assign the current head node to the firstNode variable.
         Node firstNode = this.head;
+        // Update the tail node to point to the head node.
         this.tail = this.head;
+        // Get the next node after the firstNode and assign it to the secondNode variable.
         Node secondNode = firstNode.next;
+        // Iterate through the remaining nodes in the list to reverse the connections.
         while (secondNode != null){
+            // Store the next node after the secondNode in a temporary variable.
             Node tempNode = secondNode.next;
+            // Reverse the link direction between secondNode and firstNode.
             secondNode.next = firstNode;
+            // Update the firstNode to become the secondNode.
             firstNode = secondNode;
+            // Update the secondNode to become the next node after it.
             secondNode = tempNode;
         }
+        // Set the next pointer of the new head node to null, effectively terminating the list.
         this.head.next = null;
+        // Update the head node to be the reversed firstNode.
         this.head = firstNode;
+        // Return the reversed list as an ArrayList by calling the getList() method.
         return getList();
     }
 

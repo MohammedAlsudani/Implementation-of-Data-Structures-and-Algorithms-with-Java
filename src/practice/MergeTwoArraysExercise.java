@@ -8,8 +8,8 @@ import java.util.List;
 public class MergeTwoArraysExercise {
 
     public static void main(String[] args) {
-        int[] arr1={1, 2, 3, 4, 5, 6};  //first array
-        int[] arr2={7, 8, 9, 0};    //second array
+        int[] arr1 = {1, 2, 3, 4, 5, 6};  //first array
+        int[] arr2 = {7, 8, 9, 0};    //second array
         int arr3[] = {0,1,5,2};
 
         System.out.println(mergeTowArrayWithLoop(arr1,arr2));    //prints the resultant array.
@@ -43,5 +43,4 @@ public class MergeTwoArraysExercise {
         System.arraycopy(arr2,0, result, arr1.length, arr2.length);
         return Arrays.toString(result);
     }
-
 }
