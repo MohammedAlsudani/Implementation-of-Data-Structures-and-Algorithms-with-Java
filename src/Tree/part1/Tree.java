@@ -1,4 +1,4 @@
-package Tree;
+package Tree.part1;
 
 public class Tree {
     private TreeNode root;
@@ -35,7 +35,7 @@ public class Tree {
             // case 0,1, node has 0 or 1 child(ren)
             if (subtreeRoot.getLeftChild() == null) {
                 return subtreeRoot.getRightChild();
-            }else if (subtreeRoot.getRightChild() == null){
+            } else if (subtreeRoot.getRightChild() == null){
                return subtreeRoot.getLeftChild();
             }
             subtreeRoot.setData(subtreeRoot.getRightChild().min());

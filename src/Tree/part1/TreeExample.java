@@ -1,6 +1,6 @@
-package Tree;
+package Tree.part1;
 
-public class BinarySearchTrees {
+public class TreeExample {
 
     public static void main(String[] args) {
         int[] inputArray = {57, 58, 59, -22, 7, 60, 61, 62, 20, 35, 55, -14, 1, 56};
@@ -30,10 +30,5 @@ public class BinarySearchTrees {
         intTree.traversePreOrder();
         System.out.println();
         intTree.traversePostOrder();
-
-
     }
-
-
-
 }

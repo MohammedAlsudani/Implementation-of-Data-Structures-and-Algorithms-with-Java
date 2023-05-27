@@ -1,7 +1,6 @@
 package Lists.LinkList;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 class DoublyLinkedList {
     DoublyNode head;

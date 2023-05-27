@@ -9,14 +9,16 @@ public class findMostRepeatedChar {
     public static void main(String[] args) {
 
         System.out.println("findMostRepeatedChar = " + findMostRepeatedChar("abbbssssoooookdonnnnnnnnnnakdoa323"));
-
+        String[] love =  {"🎵","🎮","🍳"};
+        for (String activity : love) {
+            System.out.println(activity);
+        }
     }
 
 
     public static char findMostRepeatedChar(String str) {
         // Create a map to store the frequency of each character
         Map<Character, Integer> charFrequency = new HashMap<>();
-
         // Loop through the characters in the string
         for (char c : str.toCharArray()) {
             // If the character is already in the map, increment its frequency
