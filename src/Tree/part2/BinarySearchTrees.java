@@ -1,6 +1,10 @@
 package Tree.part2;
 
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTrees {
     private TreeNode root;
 
@@ -125,6 +129,43 @@ public class BinarySearchTrees {
                 return;
             }
         }
+    }
+
+    public ArrayList<Integer> breadthFirstSearch() {
+        TreeNode currentNode = this.root;
+        ArrayList<Integer> list = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(currentNode);
+        while (queue.size() > 0){
+            currentNode = queue.poll();
+            list.add(currentNode.getData());
+            if (currentNode.getLeftChild()!= null) {
+                queue.add(currentNode.getLeftChild());
+            }
+            if (currentNode.getRightChild() != null) {
+                queue.add(currentNode.getRightChild());
+            }
+        }
+        return list;
+    }
+
+    public ArrayList<Integer> breadthFirstSearchR(ArrayList<Integer> list, Queue<TreeNode> queue){
+        if (queue.isEmpty()){
+            return list;
+        }
+        TreeNode currentNode = queue.poll();
+        list.add(currentNode.getData());
+        if (currentNode.getLeftChild()!= null) {
+            queue.add(currentNode.getLeftChild());
+        }
+        if (currentNode.getRightChild() != null) {
+            queue.add(currentNode.getRightChild());
+        }
+        return breadthFirstSearchR(list,queue);
+    }
+
+    public TreeNode getRoot() {
+        return root;
     }
 
     @Override

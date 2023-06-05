@@ -24,7 +24,7 @@ public class Tree {
 
     private TreeNode delete(TreeNode subtreeRoot, int value) {
         if (subtreeRoot == null){
-            return subtreeRoot;
+            return null;
         }
 
         if (value < subtreeRoot.getData()){

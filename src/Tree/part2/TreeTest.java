@@ -2,6 +2,10 @@ package Tree.part2;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeTest {
 
     public static void main(String[] args) {
@@ -14,14 +18,10 @@ public class TreeTest {
         binarySearchTrees.insert(15);
         binarySearchTrees.insert(1);
 
-
-
-        System.out.println("binarySearchTrees = " + new Gson().toJson(binarySearchTrees));
-
-        System.out.println("binarySearchTrees lookup = " + binarySearchTrees.lookup(4));
-        binarySearchTrees.remove(4);
-        System.out.println("binarySearchTrees lookup = " + binarySearchTrees.lookup(4));
-        System.out.println("binarySearchTrees2 = " + new Gson().toJson(binarySearchTrees));
-
+        System.out.println("breadthFirstSearch = " + binarySearchTrees.breadthFirstSearch());
+        ArrayList<Integer> list = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(binarySearchTrees.getRoot());
+        System.out.println("breadthFirstSearch R = " + binarySearchTrees.breadthFirstSearchR(list, queue));
     }
 }
