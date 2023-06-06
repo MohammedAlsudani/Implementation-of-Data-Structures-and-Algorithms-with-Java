@@ -17,11 +17,16 @@ public class TreeTest {
         binarySearchTrees.insert(170);
         binarySearchTrees.insert(15);
         binarySearchTrees.insert(1);
+//
+//        System.out.println("breadthFirstSearch = " + binarySearchTrees.breadthFirstSearch());
+//        ArrayList<Integer> list = new ArrayList<>();
+//        Queue<TreeNode> queue = new LinkedList<>();
+//        queue.add(binarySearchTrees.getRoot());
+//        System.out.println("breadthFirstSearch R = " + binarySearchTrees.breadthFirstSearchR(list, queue));
+        System.out.println("BFS PostOrder = " + binarySearchTrees.BFS(BFS.PostOrder));
+        System.out.println("BFS PreOrder = " + binarySearchTrees.BFS(BFS.PreOrder));
+        System.out.println("BFS InOrder = " + binarySearchTrees.BFS(BFS.InOrder));
+        System.out.println("isValidBST = " + binarySearchTrees.isValidBST(binarySearchTrees.getRoot()));
 
-        System.out.println("breadthFirstSearch = " + binarySearchTrees.breadthFirstSearch());
-        ArrayList<Integer> list = new ArrayList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(binarySearchTrees.getRoot());
-        System.out.println("breadthFirstSearch R = " + binarySearchTrees.breadthFirstSearchR(list, queue));
     }
 }

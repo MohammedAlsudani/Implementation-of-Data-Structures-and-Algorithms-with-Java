@@ -12,6 +12,10 @@ public class BinarySearchTrees {
         this.root = null;
     }
 
+    public TreeNode getRoot() {
+        return root;
+    }
+
     public void insert(int value){
         TreeNode newTreeNode =new TreeNode(value);
         if (root == null){
@@ -164,9 +168,55 @@ public class BinarySearchTrees {
         return breadthFirstSearchR(list,queue);
     }
 
-    public TreeNode getRoot() {
-        return root;
+    public ArrayList<Integer> BFS(BFS bfs) {
+        return traverse(this.getRoot(),new ArrayList<Integer>(), bfs);
     }
+
+    private ArrayList<Integer> traverse(TreeNode node, ArrayList<Integer> list, BFS bfs) {
+        if (bfs == BFS.PreOrder){
+            list.add(node.getData());
+        }
+        if (node.getLeftChild() != null){
+            traverse(node.getLeftChild(), list, bfs);
+        }
+        if (bfs == BFS.InOrder){
+            list.add(node.getData());
+        }
+        if (node.getRightChild() != null){
+            traverse(node.getRightChild(), list, bfs);
+        }
+        if (bfs == BFS.PostOrder){
+            list.add(node.getData());
+        }
+        return list;
+    }
+
+
+    public boolean isValidBST(TreeNode root) {
+        return isValidBSTHelper(root, null, null);
+    }
+
+    private boolean isValidBSTHelper(TreeNode node, Integer min, Integer max) {
+        if (node == null) {
+            return true; // base case: empty subtree is a valid BST
+        }
+
+        // Check if the current node violates the BST property
+        if ((min != null && node.getData() <= min) || (max != null && node.getData() >= max)) {
+            System.out.println("BST property violated at node: " + node.getData());
+            return false;
+        }
+
+        // Recursively validate the left and right subtrees
+        System.out.println("Validating left subtree of node: " + node.getData());
+        boolean leftValid = isValidBSTHelper(node.getLeftChild(), min, node.getData());
+
+        System.out.println("Validating right subtree of node: " + node.getData());
+        boolean rightValid = isValidBSTHelper(node.getRightChild(), node.getData(), max);
+
+        return leftValid && rightValid;
+    }
+
 
     @Override
     public String toString() {
@@ -174,4 +224,10 @@ public class BinarySearchTrees {
                 "root=" + root +
                 '}';
     }
+}
+
+enum BFS {
+    InOrder,
+    PreOrder,
+    PostOrder
 }
