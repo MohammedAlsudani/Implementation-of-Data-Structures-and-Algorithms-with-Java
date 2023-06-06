@@ -1,4 +1,4 @@
-# Implementation of Data Structures and Algorithms with java
+# Implementation of Data Structures and Algorithms with Java
 
 ## Overview - 
 
