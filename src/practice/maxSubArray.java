@@ -12,8 +12,8 @@ public class maxSubArray {
         // Initialize the maximum sum and current sum to the smallest possible integer value
         int maxSum = Integer.MIN_VALUE;
         int currentSum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            currentSum += nums[i];// Add the current element to the current sum
+        for (int num : nums) {
+            currentSum += num;// Add the current element to the current sum
             if (currentSum > maxSum) {// If current sum is greater than the maximum sum, update the maximum sum
                 maxSum = currentSum;
             }
